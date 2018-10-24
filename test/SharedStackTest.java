@@ -1,35 +1,19 @@
-import org.junit.Test;
+import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
 public class SharedStackTest {
 
-    SharedStack stack = new SharedStack<>();
-    SharedStack expectedStack = new SharedStack<>();
+    Stack expectedStack = new SharedStack<>();
+    Stack stack = new SharedStack<>();
 
-    @Test
-    public void push() {
+
+    @org.junit.Test
+    public void hello(){
+        stack =  stack.push(4);
+        stack = stack.push(3L);
+        expectedStack = SharedStack.stackFromList(Arrays.asList(4,3L));
+        assertEquals(expectedStack.toString(), stack.toString());
     }
 
-    @Test
-    public void pop() {
-        try{
-            expectedStack.top();
-        }catch(StackError er){
-
-        }
-    }
-
-
-    @Test
-    public void topWhenStackIsNull(){
-        try{
-            assertEquals(null, stack.top());
-        }catch(StackError er){
-
-        }
-    }
-    @Test
-    public void isEmpty() {
-    }
 }

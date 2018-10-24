@@ -25,7 +25,7 @@ public class SharedStack<E> implements Stack<E>{
         this.topOfStack = topOfStack;
     }
 
-    public static <E> Stack<E> asList(List<E> list){
+    public static <E> Stack<E> stackFromList(List<E> list){
         Iterator<E> it = list.iterator();
         Stack<E> stack = new SharedStack<>();
         while(it.hasNext()){
@@ -58,5 +58,18 @@ public class SharedStack<E> implements Stack<E>{
         }catch(NullPointerException ex){
             return false;
         }
+    }
+
+    @Override
+    public String toString(){
+        return toString(topOfStack);
+    }
+
+
+    private String toString(Node<E> node){
+        if(node.next == null){
+            return "" + node.elem;
+        }
+        return node.elem + ", " + toString(node.next);
     }
 }
