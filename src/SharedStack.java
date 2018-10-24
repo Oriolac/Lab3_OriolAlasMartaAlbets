@@ -60,16 +60,44 @@ public class SharedStack<E> implements Stack<E>{
         }
     }
 
-    @Override
-    public String toString(){
-        return toString(topOfStack);
+    //Mètodes de comprovació de contingut i d'adreça dels nodes
+
+    public static <E> boolean isSameContent(SharedStack<E> s1, SharedStack<E> s2){
+        return s1.contentToString().equals(s2.contentToString());
     }
 
+    public String contentToString(){
+        try{
+            return "{(TOP) " + contentToString(topOfStack) + "}";
+        } catch (NullPointerException ex){
+            return "Pila buida";
+        }
+    }
 
-    private String toString(Node<E> node){
+    private String contentToString(Node<E> node){
         if(node.next == null){
             return "" + node.elem;
         }
-        return node.elem + ", " + toString(node.next);
+        return node.elem + ", " + contentToString(node.next);
+    }
+
+    public static <E> boolean isSameAdress(SharedStack<E> s1, SharedStack<E> s2){
+        return s1.adressToString().equals(s2.adressToString());
+    }
+
+    public String adressToString() {
+        try{
+            return "{(TOP) " + adressToString(topOfStack) + "}";
+        } catch (NullPointerException ex){
+            return "Pila buida";
+        }
+    }
+
+    private String adressToString(Node<E> node) {
+        if(node.next == null){
+            return "@" + Integer.toHexString(node.hashCode());
+        }
+        return node.hashCode() + ", @" + contentToString(node.next);
+
     }
 }
