@@ -1,3 +1,6 @@
+import java.util.Iterator;
+import java.util.List;
+
 public class MutableStack<E> {
 
     private Node<E> topOfStack;
@@ -11,6 +14,20 @@ public class MutableStack<E> {
             this.elem = elem;
             this.next = next;
         }
+    }
+
+    public MutableStack(){
+        topOfStack = null;
+    }
+
+    public static <E> MutableStack<E> stackFromList(List<E> list){
+        Iterator<E> it = list.iterator();
+        MutableStack<E> stack = new MutableStack<E>();
+        while(it.hasNext()){
+            E elem = it.next();
+            stack.push(elem);
+        }
+        return stack;
     }
 
     public void push(E elem) {
@@ -28,6 +45,10 @@ public class MutableStack<E> {
     }
 
     public boolean isEmpty() {
-        return false;
+        try{
+            return topOfStack.equals(null);
+        }catch(NullPointerException ex){
+            return false;
+        }
     }
 }

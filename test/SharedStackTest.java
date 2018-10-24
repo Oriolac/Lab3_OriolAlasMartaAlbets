@@ -25,7 +25,7 @@ public class SharedStackTest {
             SharedStack s3 = (SharedStack) s2.pop();
             assertTrue(SharedStack.isSameAdress(s1,s3));
         }catch(StackError err){
-
+            err.printStackTrace();
         }
     }
 
