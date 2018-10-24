@@ -21,7 +21,7 @@ public class SharedStack<E> implements Stack<E>{
         topOfStack = null;
     }
 
-    public SharedStack(Node<E> topOfStack){
+    private SharedStack(Node<E> topOfStack){
         this.topOfStack = topOfStack;
     }
 

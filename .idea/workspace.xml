@@ -4,8 +4,9 @@
     <list default="true" id="b5fad32e-29a2-4b7f-88a0-1d1250a219b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab3_OriolAlasMartaAlbets/SharedStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3_OriolAlasMartaAlbets/SharedStack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Lab3_OriolAlasMartaAlbets/SharedStackTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Lab3_OriolAlasMartaAlbets/SharedStackTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Lab3_OriolAlasMartaAlbets/SharedStackTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SharedStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SharedStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/MutableStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/MutableStack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/SharedStackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SharedStackTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,25 +29,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="5" />
+          <entry key="class" value="6" />
           <entry key="java" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="5" />
+          <entry key="CLASS" value="6" />
           <entry key="JAVA" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3965" />
+          <entry key="java" value="4301" />
           <entry key="txt" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3965" />
+          <entry key="JAVA" value="4301" />
           <entry key="PLAIN_TEXT" value="21" />
         </counts>
       </usages-collector>
@@ -68,28 +69,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SharedStack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1161">
-              <caret line="98" column="58" lean-forward="true" selection-start-line="98" selection-start-column="58" selection-end-line="98" selection-end-column="58" />
+            <state relative-caret-position="385">
+              <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Object.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="235" column="39" selection-start-line="235" selection-start-column="39" selection-end-line="235" selection-end-column="40" />
-              <folding>
-                <element signature="e#5748#5749#0" expanded="true" />
-                <element signature="e#5784#5785#0" expanded="true" />
-                <element signature="e#10065#10066#0" expanded="true" />
-                <element signature="e#10148#10149#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,21 +84,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/SharedStackTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+            <state relative-caret-position="289">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#966#967#0" expanded="true" />
+                <element signature="e#999#1000#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/MutableStack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="510">
+              <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
               <folding>
+                <element signature="e#328#329#0" expanded="true" />
+                <element signature="e#385#386#0" expanded="true" />
                 <element signature="e#337#338#0" expanded="true" />
                 <element signature="e#365#366#0" expanded="true" />
               </folding>
@@ -157,12 +147,18 @@
       <list>
         <option value="$PROJECT_DIR$/src/StackError.java" />
         <option value="$PROJECT_DIR$/test/ChangeableStack.java" />
-        <option value="$PROJECT_DIR$/test/MutableStack.java" />
         <option value="$PROJECT_DIR$/src/Stack.java" />
         <option value="$PROJECT_DIR$/test/SharedStackTest.java" />
+        <option value="$PROJECT_DIR$/test/MutableStack.java" />
         <option value="$PROJECT_DIR$/src/SharedStack.java" />
       </list>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="575" />
@@ -214,7 +210,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540376350947" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540378085235" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab2" />
@@ -307,9 +303,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SharedStackTest - 2018.10.24 at 11h 17m 28s.xml">
-      <configuration name="SharedStackTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SharedStackTest - 2018.10.24 at 11h 19m 19s.xml">
       <configuration name="SharedStackTest" configurationId="JUnit" />
     </history-entry>
@@ -337,12 +330,15 @@
     <history-entry file="SharedStackTest - 2018.10.24 at 12h 13m 00s.xml">
       <configuration name="SharedStackTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SharedStackTest - 2018.10.24 at 12h 31m 53s.xml">
+      <configuration name="SharedStackTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10438729" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.10438729" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -352,7 +348,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.46481177" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.058919802" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18821605" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3797054" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -367,20 +363,20 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.32980332" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16717096" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10438729" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.46481177" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.48772505" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.18821605" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3797054" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -421,13 +417,6 @@
             <element signature="e#1663#1664#0" expanded="true" />
             <element signature="e#1693#1694#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/junit4/junit-4.12.jar!/org/junit/Assert.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -481,31 +470,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stack.java">
+    <entry file="jar://$USER_HOME$/junit4/junit-4.12.jar!/org/junit/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/MutableStack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#337#338#0" expanded="true" />
-            <element signature="e#365#366#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="194">
+          <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/SharedStackTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#966#967#0" expanded="true" />
+            <element signature="e#999#1000#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Stack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -524,10 +511,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SharedStack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1161">
-          <caret line="98" column="58" lean-forward="true" selection-start-line="98" selection-start-column="58" selection-end-line="98" selection-end-column="58" />
+        <state relative-caret-position="385">
+          <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/MutableStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+          <folding>
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#365#366#0" expanded="true" />
           </folding>
         </state>
       </provider>
