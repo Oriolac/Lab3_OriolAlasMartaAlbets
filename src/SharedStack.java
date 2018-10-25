@@ -97,7 +97,7 @@ public class SharedStack<E> implements Stack<E>{
         if(node.next == null){
             return "@" + Integer.toHexString(node.hashCode());
         }
-        return node.hashCode() + ", @" + contentToString(node.next);
+        return "@" + node.hashCode() + ", " + contentToString(node.next);
 
     }
 }

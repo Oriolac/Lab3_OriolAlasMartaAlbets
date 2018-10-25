@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -6,7 +8,6 @@ public class SharedStackTest {
 
     SharedStack expectedStack = new SharedStack<>();
     SharedStack stack = new SharedStack<>();
-
 
     @org.junit.Test
     public void testSameContent(){
@@ -32,6 +33,27 @@ public class SharedStackTest {
     @org.junit.Test
     public void pushEmptyStack(){
         assertEquals(expectedStack.contentToString(), stack.contentToString());
+    }
+
+    @org.junit.Test
+    public void changingElement(){
+        stack = new SharedStack();
+        Employee emp =  new Employee("Oriol", "78099079A");
+        stack = (SharedStack) stack.push(emp);
+        SharedStack stack2 = (SharedStack) stack.push(2);
+        emp.setName("Marta");
+        expectedStack = new SharedStack();
+        expectedStack = (SharedStack) expectedStack.push(emp);
+        System.out.println(expectedStack.adressToString() + stack.adressToString() + stack2.adressToString());
+
+        assertTrue(SharedStack.isSameContent(expectedStack,stack));
+        assertFalse(SharedStack.isSameAdress(expectedStack,stack)); //Comparteixen element però no node
+        try{
+            assertTrue(SharedStack.isSameContent(expectedStack, (SharedStack<? extends Object>) stack2.pop()));
+            assertTrue(SharedStack.isSameAdress(stack, (SharedStack<? extends Object>) stack2.pop()));
+        } catch (StackError er){
+
+        }
     }
 
 }
