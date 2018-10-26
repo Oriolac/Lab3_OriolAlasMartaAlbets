@@ -53,11 +53,7 @@ public class SharedStack<E> implements Stack<E>{
 
     @Override
     public boolean isEmpty() {
-        try{
-            return topOfStack.equals(null);
-        }catch(NullPointerException ex){
-            return false;
-        }
+        return null == topOfStack;
     }
 
     //Mètodes de comprovació de contingut i d'adreça dels nodes

@@ -20,6 +20,7 @@ public class MutableStack<E> {
         topOfStack = null;
     }
 
+
     public static <E> MutableStack<E> stackFromList(List<E> list){
         Iterator<E> it = list.iterator();
         MutableStack<E> stack = new MutableStack<E>();

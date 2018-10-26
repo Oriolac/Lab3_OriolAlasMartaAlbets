@@ -1,7 +1,5 @@
-import java.util.ArrayList;
+import org.junit.Test;
 import java.util.Arrays;
-import java.util.List;
-
 import static org.junit.Assert.*;
 
 public class SharedStackTest {
@@ -56,4 +54,32 @@ public class SharedStackTest {
         }
     }
 
+    @org.junit.Test
+    public void pop(){
+        stack = (SharedStack) SharedStack.stackFromList(Arrays.asList(4,3L,8));
+        try{
+            stack = (SharedStack) stack.pop();
+            expectedStack = (SharedStack) SharedStack.stackFromList(Arrays.asList(4,3L));
+            assertTrue(SharedStack.isSameContent(expectedStack, stack));
+        } catch(StackError er){
+            er.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void isEmpty() {
+        stack = new SharedStack();
+        assertTrue(stack.isEmpty());
+        stack = (SharedStack) stack.push(2);
+        assertFalse(stack.isEmpty());
+    }
+
+    @Test
+    public void sharingMemory(){
+        MutableStack mStack = new MutableStack();
+
+        mStack.push(3);
+
+    }
 }
