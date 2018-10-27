@@ -9,19 +9,19 @@ public class SharedStackTest {
 
     @org.junit.Test
     public void testSameContent(){
-        stack = (SharedStack) stack.push(4);
-        stack = (SharedStack) stack.push(3L);
-        stack = (SharedStack) stack.push(null);
-        expectedStack = (SharedStack) SharedStack.stackFromList(Arrays.asList(4,3L, null));
-        assertTrue(SharedStack.isSameContent((SharedStack) expectedStack, (SharedStack) stack));
+        stack = stack.push(4);
+        stack = stack.push(3L);
+        stack = stack.push(null);
+        expectedStack = SharedStack.stackFromList(Arrays.asList(4,3L, null));
+        assertTrue(SharedStack.isSameContent(expectedStack, stack));
     }
 
     @org.junit.Test
     public void testSameAdress(){
-        SharedStack s1 = (SharedStack) SharedStack.stackFromList(Arrays.asList(1,3));
-        SharedStack s2 = (SharedStack) s1.push(4);
+        SharedStack s1 = SharedStack.stackFromList(Arrays.asList(1,3));
+        SharedStack s2 = s1.push(4);
         try{
-            SharedStack s3 = (SharedStack) s2.pop();
+            SharedStack s3 = s2.pop();
             assertTrue(SharedStack.isSameAdress(s1,s3));
         }catch(StackError err){
             err.printStackTrace();
@@ -29,21 +29,17 @@ public class SharedStackTest {
     }
 
     @org.junit.Test
-    public void pushEmptyStack(){
+    public void testEmptyStack(){
         assertEquals(expectedStack.contentToString(), stack.contentToString());
     }
 
     @org.junit.Test
     public void changingElement(){
-        stack = new SharedStack();
         Employee emp =  new Employee("Oriol", "78099079A");
-        stack = (SharedStack) stack.push(emp);
-        SharedStack stack2 = (SharedStack) stack.push(2);
+        stack = stack.push(emp);
+        SharedStack stack2 = stack.push(2);
         emp.setName("Marta");
-        expectedStack = new SharedStack();
-        expectedStack = (SharedStack) expectedStack.push(emp);
-        System.out.println(expectedStack.adressToString() + stack.adressToString() + stack2.adressToString());
-
+        expectedStack = expectedStack.push(emp);
         assertTrue(SharedStack.isSameContent(expectedStack,stack));
         assertFalse(SharedStack.isSameAdress(expectedStack,stack)); //Comparteixen element però no node
         try{
@@ -56,10 +52,10 @@ public class SharedStackTest {
 
     @org.junit.Test
     public void pop(){
-        stack = (SharedStack) SharedStack.stackFromList(Arrays.asList(4,3L,8));
+        stack = SharedStack.stackFromList(Arrays.asList(4,3L,8));
         try{
-            stack = (SharedStack) stack.pop();
-            expectedStack = (SharedStack) SharedStack.stackFromList(Arrays.asList(4,3L));
+            stack = stack.pop();
+            expectedStack = SharedStack.stackFromList(Arrays.asList(4,3L));
             assertTrue(SharedStack.isSameContent(expectedStack, stack));
         } catch(StackError er){
             er.printStackTrace();
@@ -71,15 +67,16 @@ public class SharedStackTest {
     public void isEmpty() {
         stack = new SharedStack();
         assertTrue(stack.isEmpty());
-        stack = (SharedStack) stack.push(2);
+        stack = stack.push(2);
         assertFalse(stack.isEmpty());
     }
 
     @Test
     public void sharingMemory(){
-        MutableStack mStack = new MutableStack();
-
-        mStack.push(3);
+        MutableEmployeeStack m = MutableEmployeeStack.stackFromList(Arrays.asList(new Employee("hol", "hol")));
+        SharedStack s = new SharedStack(m.getTopOfStack());
+        m.setTopOfStack(2);
+        assertEquals(m.contentToString(), s.contentToString());
 
     }
 }

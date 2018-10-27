@@ -7,16 +7,26 @@ public class SharedStack<E> implements Stack<E>{
 
     //Subclasse Node<E>
     private static class Node<E>{
+
         private final E elem;
         private final Node<E> next;
-
         private Node(E elem, Node<E> next){
             this.elem = elem;
             this.next = next;
         }
-    }
 
+        @SuppressWarnings("unchecked")
+        public Node(Employee emp, MutableEmployeeStack.Node nextEmp) {
+            this.elem = (E) emp;
+            if(null == nextEmp){
+                this.next = null;
+            } else{
+                this.next = new Node<E>((Employee) nextEmp.getElement(), nextEmp.getNext());
+            }
+        }
+    }
     //Constructors
+
     public SharedStack(){
         topOfStack = null;
     }
@@ -25,9 +35,15 @@ public class SharedStack<E> implements Stack<E>{
         this.topOfStack = topOfStack;
     }
 
-    public static <E> Stack<E> stackFromList(List<E> list){
+    @SuppressWarnings("unchecked")
+    public SharedStack(MutableEmployeeStack.Node mutableTop){
+        this.topOfStack = new Node<E>((Employee) mutableTop.getElement(), mutableTop.getNext());
+    }
+
+    // Mètode estàtic
+    public static <E> SharedStack<E> stackFromList(List<E> list){
         Iterator<E> it = list.iterator();
-        Stack<E> stack = new SharedStack<>();
+        SharedStack<E> stack = new SharedStack<>();
         while(it.hasNext()){
             E elem = it.next();
             stack = stack.push(elem);
@@ -37,12 +53,12 @@ public class SharedStack<E> implements Stack<E>{
 
     //Mètodes de Stack<E>
     @Override
-    public Stack<E> push(E elem) {
+    public SharedStack<E> push(E elem) {
         return new SharedStack<E>(new Node<E>(elem, this.topOfStack));
     }
 
     @Override
-    public Stack<E> pop() throws StackError {
+    public SharedStack<E> pop() throws StackError {
         return new SharedStack<>(topOfStack.next);
     }
 
@@ -58,6 +74,7 @@ public class SharedStack<E> implements Stack<E>{
 
     //Mètodes de comprovació de contingut i d'adreça dels nodes
 
+
     public static <E> boolean isSameContent(SharedStack<E> s1, SharedStack<E> s2){
         return s1.contentToString().equals(s2.contentToString());
     }
@@ -69,6 +86,7 @@ public class SharedStack<E> implements Stack<E>{
             return "Pila buida";
         }
     }
+
 
     private String contentToString(Node<E> node){
         if(node.next == null){
@@ -93,7 +111,10 @@ public class SharedStack<E> implements Stack<E>{
         if(node.next == null){
             return "@" + Integer.toHexString(node.hashCode());
         }
-        return "@" + node.hashCode() + ", " + contentToString(node.next);
+        return "@" + node.hashCode() + ", " + adressToString(node.next);
+    }
 
+    public Node<E> getTopOfStack(){
+        return topOfStack;
     }
 }
