@@ -10,20 +10,12 @@ public class SharedStack<E> implements Stack<E>{
 
         private final E elem;
         private final Node<E> next;
+
         private Node(E elem, Node<E> next){
             this.elem = elem;
             this.next = next;
         }
 
-        @SuppressWarnings("unchecked")
-        public Node(Employee emp, MutableEmployeeStack.Node nextEmp) {
-            this.elem = (E) emp;
-            if(null == nextEmp){
-                this.next = null;
-            } else{
-                this.next = new Node<E>((Employee) nextEmp.getElement(), nextEmp.getNext());
-            }
-        }
     }
     //Constructors
 
@@ -35,10 +27,6 @@ public class SharedStack<E> implements Stack<E>{
         this.topOfStack = topOfStack;
     }
 
-    @SuppressWarnings("unchecked")
-    public SharedStack(MutableEmployeeStack.Node mutableTop){
-        this.topOfStack = new Node<E>((Employee) mutableTop.getElement(), mutableTop.getNext());
-    }
 
     // Mètode estàtic
     public static <E> SharedStack<E> stackFromList(List<E> list){
@@ -74,14 +62,13 @@ public class SharedStack<E> implements Stack<E>{
 
     //Mètodes de comprovació de contingut i d'adreça dels nodes
 
-
     public static <E> boolean isSameContent(SharedStack<E> s1, SharedStack<E> s2){
         return s1.contentToString().equals(s2.contentToString());
     }
 
     public String contentToString(){
         try{
-            return "{(TOP) " + contentToString(topOfStack) + "}";
+            return "{ " + contentToString(topOfStack) + "}";
         } catch (NullPointerException ex){
             return "Pila buida";
         }
@@ -101,7 +88,7 @@ public class SharedStack<E> implements Stack<E>{
 
     public String adressToString() {
         try{
-            return "{(TOP) " + adressToString(topOfStack) + "}";
+            return "{ " + adressToString(topOfStack) + "}";
         } catch (NullPointerException ex){
             return "Pila buida";
         }
@@ -114,7 +101,4 @@ public class SharedStack<E> implements Stack<E>{
         return "@" + node.hashCode() + ", " + adressToString(node.next);
     }
 
-    public Node<E> getTopOfStack(){
-        return topOfStack;
-    }
 }

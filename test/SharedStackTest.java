@@ -34,23 +34,6 @@ public class SharedStackTest {
     }
 
     @org.junit.Test
-    public void changingElement(){
-        Employee emp =  new Employee("Oriol", "78099079A");
-        stack = stack.push(emp);
-        SharedStack stack2 = stack.push(2);
-        emp.setName("Marta");
-        expectedStack = expectedStack.push(emp);
-        assertTrue(SharedStack.isSameContent(expectedStack,stack));
-        assertFalse(SharedStack.isSameAdress(expectedStack,stack)); //Comparteixen element però no node
-        try{
-            assertTrue(SharedStack.isSameContent(expectedStack, (SharedStack<? extends Object>) stack2.pop()));
-            assertTrue(SharedStack.isSameAdress(stack, (SharedStack<? extends Object>) stack2.pop()));
-        } catch (StackError er){
-
-        }
-    }
-
-    @org.junit.Test
     public void pop(){
         stack = SharedStack.stackFromList(Arrays.asList(4,3L,8));
         try{
@@ -59,6 +42,17 @@ public class SharedStackTest {
             assertTrue(SharedStack.isSameContent(expectedStack, stack));
         } catch(StackError er){
             er.printStackTrace();
+        }
+    }
+
+    @Test
+    public void top(){
+        stack =  SharedStack.stackFromList(Arrays.asList(4,3L));
+        try{
+            assertEquals(3L, stack.top());
+
+        }catch(StackError er){
+
         }
     }
 
@@ -71,12 +65,21 @@ public class SharedStackTest {
         assertFalse(stack.isEmpty());
     }
 
-    @Test
-    public void sharingMemory(){
-        MutableEmployeeStack m = MutableEmployeeStack.stackFromList(Arrays.asList(new Employee("hol", "hol")));
-        SharedStack s = new SharedStack(m.getTopOfStack());
-        m.setTopOfStack(2);
-        assertEquals(m.contentToString(), s.contentToString());
-
+    @org.junit.Test
+    public void changingElement(){
+        Employee emp =  new Employee("Oriol", "78099079A");
+        stack = stack.push(emp);
+        SharedStack stack2 = stack.push(2);
+        emp.setName("Marta");
+        expectedStack = expectedStack.push(emp);
+        assertTrue(SharedStack.isSameContent(expectedStack,stack));
+        assertFalse(SharedStack.isSameAdress(expectedStack,stack)); //Comparteixen element però no node
+        try{
+            assertTrue(SharedStack.isSameContent(expectedStack, (SharedStack<? extends Object>) stack2.pop()));
+            assertTrue(SharedStack.isSameAdress(stack, (SharedStack<? extends Object>) stack2.pop()));
+        } catch (StackError er){
+            er.printStackTrace();
+        }
     }
+
 }
